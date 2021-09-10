@@ -7,13 +7,14 @@ import { issues } from '../assets/mock-issues';
   providedIn: 'root',
 })
 export class IssuesService {
-  private issues: Issue[] = [];
+  // private issues: Issue[] = [];
 
   constructor() {
-    this.issues = issues;
+    // this.issues = issues;
   }
 
   getPendingIssues(): Issue[] {
-    return this.issues.filter((issue) => !issue.completed);
+    console.log(issues);
+    return issues.filter((issue) => !issue.completed);
   }
 }
