@@ -17,4 +17,9 @@ export class IssuesService {
     console.log(issues);
     return issues.filter((issue) => !issue.completed);
   }
+
+  createIssue(issue: Issue) {
+    issue.issueNo = this.getPendingIssues.length + 1;
+    issues.push(issue);
+  }
 }
