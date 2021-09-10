@@ -22,4 +22,13 @@ export class IssuesService {
     issue.issueNo = this.getPendingIssues.length + 1;
     issues.push(issue);
   }
+
+  completeIssue(issue: Issue) {
+    const selectedIssue: Issue = {
+      ...issue,
+      completed: new Date(),
+    };
+    const index = issues.findIndex((i) => i === issue);
+    issues[index] = selectedIssue;
+  }
 }
